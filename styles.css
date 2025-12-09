@@ -1,15 +1,15 @@
 /* Shared site stylesheet extracted from index.html */
 :root {
-  --color-bg: #f3f4f6; /* light neutral background */
+  --color-bg: #f4f6fb; /* light neutral background */
   --color-surface: #ffffff; /* light cards */
-  --color-primary: #f6c200; /* warm yellow accent */
-  --color-primary-soft: #fff5cc;
-  --color-accent: #11131a;
-  --color-text: #1f2329; /* dark copy */
-  --color-muted: #677184;
-  --color-highlight: #f5c542;
-  --color-header-bg: #11131a;
-  --color-header-text: #ffffff;
+  --color-primary: #1f46b0; /* royal blue */
+  --color-primary-soft: #e6edfb;
+  --color-accent: #0f172a; /* deep navy accent */
+  --color-text: #0f172a; /* dark copy */
+  --color-muted: #5b6478;
+  --color-highlight: #3b5cc9;
+  --color-header-bg: #0c1224;
+  --color-header-text: #f8fafc;
   --radius: 12px;
   --shadow-soft: 0 8px 20px rgba(15, 23, 42, 0.08);
   --spacing: 1.5rem;
@@ -75,7 +75,7 @@ a {
   width: 34px;
   height: 34px;
   border-radius: 6px;
-  background: linear-gradient(135deg, #f6c200, #e0a400);
+  background: linear-gradient(135deg, #1f46b0, #0c1224);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,7 +120,7 @@ nav {
   border-radius: 999px;
   border: 1px solid var(--color-primary);
   background: var(--color-primary);
-  color: #11131a;
+  color: #f8fafc;
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -203,7 +203,7 @@ nav {
 /* Buttons */
 .btn-primary,
 .btn-ghost { border-radius: 999px; padding: 0.7rem 1.3rem; border: none; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; }
-.btn-primary { background: var(--color-primary); color: #ffffff; }
+.btn-primary { background: var(--color-primary); color: #f8fafc; }
 .btn-ghost { background: transparent; color: var(--color-primary); border: 1px solid var(--color-primary-soft); }
 
 /* many other utility styles (cards, forms, steps, etc.) are included */
@@ -439,7 +439,7 @@ nav {
 }
 
 .btn-primary.block { width: 100%; justify-content: center; }
-.btn-primary { background: var(--color-primary); color: #11131a; }
+.btn-primary { background: var(--color-primary); color: #f8fafc; }
 .btn-primary:hover { filter: brightness(0.97); }
 
 .contact {
