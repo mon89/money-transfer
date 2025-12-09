@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sign in — SafeBridge Transfer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="brand"><div class="brand-mark">SB</div>SafeBridge Transfer</div>
+      <nav><a href="index.html" class="link">Home</a></nav>
+    </header>
+
+    <main>
+      <h1>Welcome back</h1>
+      <p class="lead">Sign in to continue sending money and managing your account.</p>
+
+      <form action="#" method="post" onsubmit="event.preventDefault();alert('Demo: signed in')">
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" placeholder="Your password" required />
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.5rem">
+          <div class="muted small"><a class="link" href="#">Forgot password?</a></div>
+          <button class="btn" type="submit">Sign in</button>
+        </div>
+        <div style="margin-top:1rem;color:var(--color-muted)">Don't have an account? <a class="link" href="register.html">Create account</a></div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sign up — SafeBridge Transfer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="brand"><div class="brand-mark">SB</div>SafeBridge Transfer</div>
+      <nav><a href="index.html" class="link">Home</a></nav>
+    </header>
+
+    <main>
+      <h1>Create your account</h1>
+      <p class="lead">Sign up with your name, email, and Canadian address in just a few steps.</p>
+
+      <form action="#" method="post" onsubmit="event.preventDefault();alert('Demo: form submitted')">
+        <div class="row">
+          <div>
+            <label for="first">First name</label>
+            <input id="first" name="first" placeholder="Your given name" required />
+          </div>
+          <div>
+            <label for="last">Last name</label>
+            <input id="last" name="last" placeholder="Family name" required />
+          </div>
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="you@example.com" required />
+        </div>
+
+        <div>
+          <label for="address">Canadian address</label>
+          <input id="address" name="address" placeholder="Street, City, Province, Postal Code" required />
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" placeholder="Choose a secure password" required />
+          </div>
+          <div>
+            <label for="confirm">Confirm password</label>
+            <input id="confirm" type="password" name="confirm" placeholder="Repeat password" required />
+          </div>
+        </div>
+
+        <div style="display:flex;gap:.75rem;align-items:center;margin-top:.5rem">
+          <button class="btn" type="submit">Create account</button>
+          <div class="muted small">Already have an account? <a class="link" href="signin.html">Sign in</a></div>
+        </div>
+
+        <div class="meta">By creating an account you agree to our <a class="link" href="#">Terms and Conditions</a> and <a class="link" href="#">Privacy Policy</a>.</div>
+      </form>
+
+      <div class="card" style="margin-top:1.25rem;">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;">
+          <div>
+            <div class="card-title">KYC verification</div>
+            <div class="card-subtitle">Connect your bank securely via Plaid to complete verification.</div>
+          </div>
+          <button class="btn" type="button" onclick="alert('Demo: launching Plaid Link')">Connect with Plaid</button>
+        </div>
+        <div class="meta" style="margin-top:0.5rem;">We’ll open a Plaid Link flow to verify your identity and funding account. Demo only—no real data sent.</div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
