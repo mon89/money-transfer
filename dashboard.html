@@ -64,17 +64,30 @@
         </div>
         <div class="form-columns-2">
           <label class="field">
+            <span>Receiver’s country</span>
+            <div class="select">
+              <select id="dash-country">
+                <option value="mm">Myanmar (CAD → MMK)</option>
+                <option value="ca">Canada (MMK → CAD)</option>
+              </select>
+              <span class="chevron">⌄</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="form-columns-2">
+          <label class="field">
             <span>Send amount</span>
             <div class="input-with-chip">
-              <span class="chip">CAD</span>
-              <input type="number" min="0" step="0.01" placeholder="500.00">
+              <span class="chip" id="dash-send-chip">CAD</span>
+              <input type="number" min="0" step="0.01" placeholder="500.00" id="dash-send" />
             </div>
           </label>
           <label class="field">
             <span>Receive amount</span>
             <div class="input-with-chip">
-              <span class="chip">MMK</span>
-              <input type="number" min="0" step="100" placeholder="825,000">
+              <span class="chip" id="dash-receive-chip">MMK</span>
+              <input type="number" min="0" step="100" placeholder="825,000" id="dash-receive" />
             </div>
           </label>
         </div>
@@ -113,10 +126,10 @@
             </select>
           </label>
         </div>
-        <div class="rate-row">
-          <div>Rate: <strong>1 CAD ≈ 1,650 MMK</strong></div>
-          <div>Fees: <strong>$4.99 CAD</strong></div>
-          <div>Est. arrival: <strong>Today</strong></div>
+        <div class="rate-row" id="dash-rate-row">
+          <div>Rate: <strong id="dash-rate">1 CAD ≈ 1,650 MMK</strong></div>
+          <div>Fees: <strong id="dash-fee">$4.99 CAD</strong></div>
+          <div>Est. arrival: <strong id="dash-arrival">Today</strong></div>
         </div>
         <button class="btn-primary block" type="button">Review & continue</button>
       </div>
@@ -153,4 +166,21 @@
     </section>
   </div>
 </body>
+<script>
+  // Demo: swap currency labels when changing corridor (matches home page behavior)
+  const countrySel = document.getElementById('dash-country');
+  const sendChip = document.getElementById('dash-send-chip');
+  const receiveChip = document.getElementById('dash-receive-chip');
+  const rateLabel = document.getElementById('dash-rate');
+  const feeLabel = document.getElementById('dash-fee');
+
+  countrySel?.addEventListener('change', (e) => {
+    const val = e.target.value;
+    const isToMM = val === 'mm';
+    sendChip.textContent = isToMM ? 'CAD' : 'MMK';
+    receiveChip.textContent = isToMM ? 'MMK' : 'CAD';
+    rateLabel.textContent = isToMM ? '1 CAD ≈ 1,650 MMK' : '1 MMK ≈ 0.00060 CAD';
+    feeLabel.textContent = isToMM ? '$4.99 CAD' : '$6.99 CAD';
+  });
+</script>
 </html>
