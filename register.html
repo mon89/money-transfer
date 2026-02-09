@@ -119,9 +119,8 @@
               <div class="input-with-chip bordered">
                 <span class="chip">Email</span>
                 <input id="email" type="email" name="email" placeholder="you@example.com" required />
-                <button type="button" class="text-button" onclick="alert('Demo: email code sent')">Send code</button>
               </div>
-              <div class="inline-hint">We’ll email a 6‑digit code to confirm this address.</div>
+              <div class="inline-hint">You’ll request a code right after creating your profile.</div>
             </div>
             <div>
               <label for="phone">Mobile phone</label>
@@ -191,6 +190,37 @@
         <div class="form-actions">
           <button class="btn-primary" type="submit" onclick="event.preventDefault();alert('Demo: profile captured')">Create profile</button>
           <div class="muted small">By continuing, you confirm you’ll complete any required identity checks before sending.</div>
+        </div>
+      </section>
+
+      <section class="card verification-card">
+        <div class="card-title">Email verification screens (demo)</div>
+        <div class="demo-grid">
+          <div class="card thin">
+            <div class="section-title">Request code</div>
+            <p class="feature-text">To protect your profile, we’ll send you a code to verify your email address.</p>
+            <div class="input-with-chip bordered">
+              <span class="chip">Email</span>
+              <input type="email" placeholder="you@example.com" value="you@example.com" />
+            </div>
+            <button class="btn-primary block" type="button">Request code</button>
+            <div class="inline-hint">Code arrives in under a minute. Didn’t get it? Check spam or resend after 30s.</div>
+          </div>
+
+          <div class="card thin">
+            <div class="section-title">Enter 6-digit code</div>
+            <p class="feature-text">Enter the code we emailed to confirm ownership.</p>
+            <div class="otp-inputs">
+              <input maxlength="1" inputmode="numeric" />
+              <input maxlength="1" inputmode="numeric" />
+              <input maxlength="1" inputmode="numeric" />
+              <input maxlength="1" inputmode="numeric" />
+              <input maxlength="1" inputmode="numeric" />
+              <input maxlength="1" inputmode="numeric" />
+            </div>
+            <button class="btn-primary block" type="button">Confirm email</button>
+            <div class="inline-hint">This is a demo — codes aren’t actually sent.</div>
+          </div>
         </div>
       </section>
 
