@@ -111,8 +111,10 @@
           <label class="field">
             <span>Pay with</span>
             <select>
-              <option>Bank account</option>
-              <option>Card / wallet</option>
+              <option>RBC • ****1234 (bank)</option>
+              <option>TD • ****7788 (bank)</option>
+              <option>Visa • ****4455 (card)</option>
+              <option>Add new funding account…</option>
             </select>
           </label>
           <label class="field">
@@ -128,6 +130,18 @@
         <div class="rate-row" id="dash-rate-row">
           <div>Rate: <strong id="dash-rate">1 CAD ≈ 1,650 MMK</strong></div>
           <div>Est. arrival: <strong id="dash-arrival">Today</strong></div>
+        </div>
+
+        <div class="reference-box">
+          <div class="reference-row">
+            <span class="label">Transfer ID</span>
+            <span class="value" id="dash-transfer-id">SB-482193</span>
+          </div>
+          <div class="reference-row">
+            <span class="label">Bank reference</span>
+            <span class="value" id="dash-bank-ref">SAFE-9472</span>
+          </div>
+          <div class="inline-hint">Use this reference when checking incoming deposits manually.</div>
         </div>
         <button class="btn-primary block" type="button">Review & continue</button>
       </div>

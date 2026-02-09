@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Admin — Transfers</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-header">
+    <div class="inner">
+      <div class="brand"><div class="brand-mark">SB</div>SafeBridge Transfer</div>
+      <nav>
+        <a class="nav-link" href="dashboard.html">Dashboard</a>
+        <a class="nav-link" href="admin.html">Admin</a>
+      </nav>
+      <div class="nav-secondary">
+        <span class="pill">Demo mode</span>
+        <a class="nav-login" href="signin.html">Log out</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="shell" style="margin-top:1.25rem;">
+    <header class="dashboard-header">
+      <div>
+        <div class="eyebrow">Admin view</div>
+        <h1>Transfer tracking</h1>
+        <p class="hero-subtitle">Match incoming deposits to pending transfers using tracking and bank references.</p>
+      </div>
+      <div class="header-actions">
+        <a class="btn-ghost" href="dashboard.html">Back to dashboard</a>
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Pending & recent transfers</div>
+        <div class="card-subtitle">Mark as received when the bank deposit is confirmed.</div>
+      </div>
+      <div class="table">
+        <div class="table-head">
+          <span>ID</span>
+          <span>Sender</span>
+          <span>Corridor</span>
+          <span>Amount</span>
+          <span>Funding</span>
+          <span>Status</span>
+          <span>Action</span>
+        </div>
+        <div class="table-row">
+          <span>SB-482193</span>
+          <span>May Thazin<br><small>may@example.com</small></span>
+          <span>CAD → MMK</span>
+          <span>750 CAD</span>
+          <span>RBC • ****1234</span>
+          <span><span class="pill">Pending</span><br><small>Ref: SAFE-9472</small></span>
+          <span><button class="btn-ghost" type="button">Mark received</button></span>
+        </div>
+        <div class="table-row">
+          <span>SB-482120</span>
+          <span>Ko Aung<br><small>aung@example.com</small></span>
+          <span>CAD → MMK</span>
+          <span>300 CAD</span>
+          <span>TD • ****7788</span>
+          <span><span class="pill muted">Completed</span><br><small>Ref: SAFE-1023</small></span>
+          <span><button class="btn-ghost" type="button">View</button></span>
+        </div>
+        <div class="table-row">
+          <span>SB-481900</span>
+          <span>Su Su<br><small>su@example.com</small></span>
+          <span>MMK → CAD</span>
+          <span>900,000 MMK</span>
+          <span>Visa • ****4455</span>
+          <span><span class="pill muted">Completed</span><br><small>Ref: SAFE-8891</small></span>
+          <span><button class="btn-ghost" type="button">View</button></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
