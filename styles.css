@@ -573,6 +573,39 @@ nav .dropdown div:hover { background: rgba(255,255,255,0.04); color: var(--color
   gap: 1.1rem;
   align-items: start;
 }
+.step-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.65rem;
+  margin: 0.4rem 0 1rem;
+}
+.step-flow__item {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  padding: 0.65rem 0.7rem;
+  border: 1px solid rgba(17,19,26,0.08);
+  border-radius: 12px;
+  background: #f7f8fa;
+}
+.step-flow__item.active {
+  border-color: var(--color-primary);
+  background: #eef2ff;
+  box-shadow: 0 10px 20px rgba(31,70,176,0.12);
+}
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #f9f4d9;
+  color: #11131a;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-label { font-weight: 700; font-size: 0.97rem; }
+.step-desc { color: var(--color-muted); font-size: 0.9rem; margin-top: 0.05rem; }
 .auth-card {
   background: #fff;
   border-radius: var(--radius);
