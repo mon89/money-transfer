@@ -37,19 +37,18 @@
 
     <section class="dashboard-grid">
       <div class="card stat-card">
-        <div class="card-title">Available balance</div>
-        <div class="stat-value">$5,200.00 CAD</div>
-        <div class="stat-hint">Settlement in 1–2 business days.</div>
-      </div>
-      <div class="card stat-card">
-        <div class="card-title">Last transfer</div>
-        <div class="stat-value">$750 CAD → MMK</div>
-        <div class="stat-hint">Completed • Yesterday • Ko Aung</div>
-      </div>
-      <div class="card stat-card">
         <div class="card-title">Verification</div>
         <div class="stat-value">Email verified</div>
         <div class="stat-hint">Phone on file • ID pending</div>
+      </div>
+      <div class="card stat-card">
+        <div class="card-title">History</div>
+        <div class="stat-value">3 recent transfers</div>
+        <div class="stat-hint"><a class="link" href="#activity">View full history</a></div>
+      </div>
+      <div class="card stat-card">
+        <div class="card-title">Track a transfer</div>
+        <div class="stat-hint">Use your tracking number to see status below.</div>
       </div>
     </section>
 
@@ -136,9 +135,22 @@
 
       <div class="card activity-card" id="activity">
         <div class="card-header">
-          <div class="card-title">Recent activity</div>
+          <div>
+            <div class="card-title">History & tracking</div>
+            <div class="card-subtitle">See recent transfers or track a specific one.</div>
+          </div>
           <a class="link" href="#">View all</a>
         </div>
+
+        <div class="track-box">
+          <label class="field" style="margin-bottom:0.5rem;">
+            <span>Tracking number</span>
+            <input type="text" placeholder="e.g., SB-12345678" />
+          </label>
+          <button class="btn-primary block" type="button">Track transfer</button>
+        </div>
+
+        <div class="card-subtitle" style="margin-top:0.75rem;">Recent activity</div>
         <ul class="activity-list">
           <li>
             <div>

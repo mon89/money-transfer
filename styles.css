@@ -494,6 +494,7 @@ nav {
 .activity-title { font-weight: 700; }
 .activity-meta { color: var(--color-muted); font-size: 0.9rem; }
 .pill.muted { background: #f1f5f9; color: var(--color-muted); }
+.track-box { background: #f7f8fa; border: 1px solid rgba(17,19,26,0.08); border-radius: 10px; padding: 0.75rem; }
 
 @media (max-width: 960px) {
   .dashboard-main { grid-template-columns: 1fr; }
