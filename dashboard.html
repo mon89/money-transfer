@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard — SafeBridge Transfer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-header">
+    <div class="inner">
+      <div class="brand"><div class="brand-mark">SB</div>SafeBridge Transfer</div>
+      <nav>
+        <a class="nav-link" href="dashboard.html">Dashboard</a>
+        <a class="nav-link" href="#activity">Activity</a>
+        <a class="nav-link" href="#recipients">Recipients</a>
+      </nav>
+      <div class="nav-secondary">
+        <span class="pill">Demo mode</span>
+        <a class="nav-login" href="signin.html">Log out</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="shell" style="margin-top:1.25rem;">
+    <header class="dashboard-header">
+      <div>
+        <div class="eyebrow">Welcome back</div>
+        <h1>Send money in minutes</h1>
+        <p class="hero-subtitle">Review your balances, start a transfer, and track recent activity.</p>
+      </div>
+      <div class="header-actions">
+        <a class="btn-primary" href="#new-transfer">New transfer</a>
+        <a class="btn-ghost" href="#activity">View activity</a>
+      </div>
+    </header>
+
+    <section class="dashboard-grid">
+      <div class="card stat-card">
+        <div class="card-title">Available balance</div>
+        <div class="stat-value">$5,200.00 CAD</div>
+        <div class="stat-hint">Settlement in 1–2 business days.</div>
+      </div>
+      <div class="card stat-card">
+        <div class="card-title">Last transfer</div>
+        <div class="stat-value">$750 CAD → MMK</div>
+        <div class="stat-hint">Completed • Yesterday • Ko Aung</div>
+      </div>
+      <div class="card stat-card">
+        <div class="card-title">Verification</div>
+        <div class="stat-value">Email verified</div>
+        <div class="stat-hint">Phone on file • ID pending</div>
+      </div>
+    </section>
+
+    <section class="dashboard-main" id="new-transfer">
+      <div class="card transfer-card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Start a transfer</div>
+            <div class="card-subtitle">Canada → Myanmar</div>
+          </div>
+          <div class="pill">Demo</div>
+        </div>
+        <div class="form-columns-2">
+          <label class="field">
+            <span>Send amount</span>
+            <div class="input-with-chip">
+              <span class="chip">CAD</span>
+              <input type="number" min="0" step="0.01" placeholder="500.00">
+            </div>
+          </label>
+          <label class="field">
+            <span>Receive amount</span>
+            <div class="input-with-chip">
+              <span class="chip">MMK</span>
+              <input type="number" min="0" step="100" placeholder="825,000">
+            </div>
+          </label>
+        </div>
+        <div class="form-columns-2">
+          <label class="field">
+            <span>Recipient</span>
+            <select>
+              <option>Ko Aung (KBZ Bank)</option>
+              <option>Ma Thazin (AYA Bank)</option>
+              <option>Add new recipient…</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Payout method</span>
+            <select>
+              <option>Bank account</option>
+              <option>Mobile wallet</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-columns-2">
+          <label class="field">
+            <span>Pay with</span>
+            <select>
+              <option>Bank account</option>
+              <option>Card / wallet</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Purpose of transfer</span>
+            <select>
+              <option>Family support</option>
+              <option>Education</option>
+              <option>Medical</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </div>
+        <div class="rate-row">
+          <div>Rate: <strong>1 CAD ≈ 1,650 MMK</strong></div>
+          <div>Fees: <strong>$4.99 CAD</strong></div>
+          <div>Est. arrival: <strong>Today</strong></div>
+        </div>
+        <button class="btn-primary block" type="button">Review & continue</button>
+      </div>
+
+      <div class="card activity-card" id="activity">
+        <div class="card-header">
+          <div class="card-title">Recent activity</div>
+          <a class="link" href="#">View all</a>
+        </div>
+        <ul class="activity-list">
+          <li>
+            <div>
+              <div class="activity-title">$750 CAD → MMK</div>
+              <div class="activity-meta">Ko Aung • Bank transfer • Completed</div>
+            </div>
+            <span class="pill">Yesterday</span>
+          </li>
+          <li>
+            <div>
+              <div class="activity-title">$300 CAD → MMK</div>
+              <div class="activity-meta">Ma Thazin • Wallet • Delivered</div>
+            </div>
+            <span class="pill">2 days ago</span>
+          </li>
+          <li>
+            <div>
+              <div class="activity-title">Profile updated</div>
+              <div class="activity-meta">Contact info refreshed</div>
+            </div>
+            <span class="pill muted">This week</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

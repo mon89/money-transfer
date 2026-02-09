@@ -40,32 +40,15 @@
         <div class="form-section">
           <div class="section-title">Password</div>
           <input id="password" type="password" name="password" placeholder="Your password" required />
-          <div class="inline-hint">We’ll challenge with a code if we don’t recognize this device.</div>
-        </div>
-
-        <div class="form-section">
-          <label class="inline-checkbox">
-            <input type="checkbox" checked />
-            <span>Trust this device for 30 days (similar to Western Union keep-me-signed-in).</span>
-          </label>
+          <div class="inline-hint">Demo only — no data is sent.</div>
         </div>
 
         <div class="form-actions">
-          <button class="btn-primary" type="submit" onclick="event.preventDefault();alert('Demo: signed in')">Sign in</button>
+          <a class="btn-primary block" href="dashboard.html">Sign in</a>
           <div class="muted small"><a class="link" href="#">Forgot password?</a></div>
           <div class="muted small">Don't have an account? <a class="link" href="register.html">Create account</a></div>
         </div>
       </section>
-
-      <aside class="auth-side card">
-        <div class="card-title">Security cues</div>
-        <ul class="checklist">
-          <li>2-step SMS/email challenge when device is new or risky.</li>
-          <li>Timeout after 5 attempts, mirrors Western Union safety pattern.</li>
-          <li>Show last sign-in time/location on success (placeholder).</li>
-        </ul>
-        <div class="note-highlight">Demo only: No credentials stored or sent.</div>
-      </aside>
     </main>
   </div>
 </body>
