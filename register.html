@@ -188,35 +188,9 @@
         </div>
 
         <div class="form-actions">
-          <button class="btn-primary" type="submit" id="create-profile-btn">Create profile</button>
+          <button class="btn-primary" type="button" onclick="window.location='email-verify.html';">Create profile</button>
           <div class="muted small">By continuing, you confirm you’ll complete any required identity checks before sending.</div>
         </div>
-      </section>
-
-      <section class="card verification-card hidden" id="email-request-step">
-        <div class="card-title">Verify your email</div>
-        <p class="feature-text">To protect your profile, we’ll send you a code to verify your email address.</p>
-        <div class="input-with-chip bordered">
-          <span class="chip">Email</span>
-          <input type="email" id="verify-email" placeholder="you@example.com" value="you@example.com" />
-        </div>
-        <button class="btn-primary block" type="button" id="request-code-btn">Request code</button>
-        <div class="inline-hint">Code arrives in under a minute. Didn’t get it? Check spam or resend after 30s.</div>
-      </section>
-
-      <section class="card verification-card hidden" id="email-code-step">
-        <div class="card-title">Enter 6-digit code</div>
-        <p class="feature-text">Enter the code we emailed to confirm ownership.</p>
-        <div class="otp-inputs">
-          <input maxlength="1" inputmode="numeric" />
-          <input maxlength="1" inputmode="numeric" />
-          <input maxlength="1" inputmode="numeric" />
-          <input maxlength="1" inputmode="numeric" />
-          <input maxlength="1" inputmode="numeric" />
-          <input maxlength="1" inputmode="numeric" />
-        </div>
-        <button class="btn-primary block" type="button" onclick="alert('Demo: email confirmed');">Confirm email</button>
-        <div class="inline-hint">This is a demo — codes aren’t actually sent.</div>
       </section>
 
       <aside class="auth-side card">
@@ -233,25 +207,4 @@
     </main>
   </div>
 </body>
-<script>
-  // Demo-only flow: after profile submit, show email verification steps.
-  const profileForm = document.getElementById('profile-step');
-  const createBtn = document.getElementById('create-profile-btn');
-  const emailRequest = document.getElementById('email-request-step');
-  const emailCode = document.getElementById('email-code-step');
-  const requestBtn = document.getElementById('request-code-btn');
-
-  createBtn?.addEventListener('click', (e) => {
-    e.preventDefault();
-    profileForm.classList.add('hidden');
-    emailRequest.classList.remove('hidden');
-    emailRequest.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-
-  requestBtn?.addEventListener('click', () => {
-    emailRequest.classList.add('hidden');
-    emailCode.classList.remove('hidden');
-    emailCode.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-</script>
 </html>

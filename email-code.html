@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Enter code — SafeBridge Transfer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="auth-hero">
+    <div class="auth-hero__inner">
+      <div class="brand"><div class="brand-mark">SB</div>SafeBridge Transfer</div>
+      <div class="pill" aria-label="Security badge">Secure verification</div>
+    </div>
+  </div>
+
+  <div class="shell auth-shell">
+    <header class="auth-header">
+      <div class="auth-header__left">
+        <div class="eyebrow">Step 3 · Enter code</div>
+        <h1>Check your email</h1>
+        <p class="lead">We sent a 6-digit code to your email. Enter it to confirm ownership.</p>
+      </div>
+      <div class="auth-header__right">
+        <a class="link" href="email-verify.html">Change email</a>
+      </div>
+    </header>
+
+    <main class="auth-layout">
+      <section class="auth-card">
+        <div class="form-section">
+          <div class="section-title">Enter code</div>
+          <div class="otp-inputs">
+            <input maxlength="1" inputmode="numeric" />
+            <input maxlength="1" inputmode="numeric" />
+            <input maxlength="1" inputmode="numeric" />
+            <input maxlength="1" inputmode="numeric" />
+            <input maxlength="1" inputmode="numeric" />
+            <input maxlength="1" inputmode="numeric" />
+          </div>
+          <div class="inline-hint">Code expires in 10 minutes.</div>
+        </div>
+        <div class="form-actions">
+          <button class="btn-primary" type="button" onclick="alert('Demo: email confirmed');">Confirm email</button>
+          <button class="btn-ghost block" type="button" onclick="alert('Demo: code resent');">Resend code</button>
+        </div>
+      </section>
+
+      <aside class="auth-side card">
+        <div class="card-title">Trouble receiving?</div>
+        <ul class="checklist">
+          <li>Check spam and promotions folders.</li>
+          <li>Confirm the address is correct.</li>
+          <li>Request a new code after 30 seconds.</li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>

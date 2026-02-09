@@ -452,6 +452,7 @@ nav {
 }
 
 .btn-primary.block { width: 100%; justify-content: center; }
+.btn-ghost.block { width: 100%; justify-content: center; }
 .btn-primary { background: var(--color-primary); color: #f8fafc; }
 .btn-primary:hover { filter: brightness(0.97); }
 

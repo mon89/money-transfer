@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Verify email — SafeBridge Transfer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="auth-hero">
+    <div class="auth-hero__inner">
+      <div class="brand"><div class="brand-mark">SB</div>SafeBridge Transfer</div>
+      <div class="pill" aria-label="Security badge">Secure verification</div>
+    </div>
+  </div>
+
+  <div class="shell auth-shell">
+    <header class="auth-header">
+      <div class="auth-header__left">
+        <div class="eyebrow">Step 2 · Verify email</div>
+        <h1>Request your verification code</h1>
+        <p class="lead">To protect your profile, we’ll send a code to confirm you own this email address.</p>
+      </div>
+      <div class="auth-header__right">
+        <a class="link" href="register.html">Back to profile</a>
+      </div>
+    </header>
+
+    <main class="auth-layout">
+      <section class="auth-card">
+        <div class="form-section">
+          <label for="verify-email">Email address</label>
+          <div class="input-with-chip bordered">
+            <span class="chip">Email</span>
+            <input id="verify-email" type="email" placeholder="you@example.com" value="you@example.com" />
+          </div>
+          <div class="inline-hint">We’ll send a 6-digit code. You can resend after 30 seconds.</div>
+        </div>
+        <div class="form-actions">
+          <button class="btn-primary" type="button" onclick="window.location='email-code.html';">Request code</button>
+          <div class="muted small">Don’t see the email? Check spam or try a different address.</div>
+        </div>
+      </section>
+
+      <aside class="auth-side card">
+        <div class="card-title">Why verify?</div>
+        <ul class="checklist">
+          <li>Secures your account recovery.</li>
+          <li>Prevents unauthorized changes.</li>
+          <li>Enables transfer notifications.</li>
+        </ul>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>
