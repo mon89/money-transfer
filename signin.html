@@ -7,31 +7,65 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="shell">
-    <header>
+  <div class="auth-hero">
+    <div class="auth-hero__inner">
       <div class="brand"><div class="brand-mark">SB</div>SafeBridge Transfer</div>
-      <nav><a href="index.html" class="link">Home</a></nav>
+      <div class="pill" aria-label="Canada compliance badge">Canada MSB • FINTRAC aligned</div>
+    </div>
+  </div>
+
+  <div class="shell auth-shell">
+    <header class="auth-header">
+      <div class="auth-header__left">
+        <div class="eyebrow">Western Union style login checks</div>
+        <h1>Welcome back</h1>
+        <p class="lead">Secure sign-in with device and SMS verification, similar to Western Union Canada web.</p>
+      </div>
+      <div class="auth-header__right">
+        <div class="lang-toggle">
+          <button type="button" class="chip ghost">English</button>
+          <button type="button" class="chip ghost muted">Français</button>
+        </div>
+        <a class="link" href="register.html">Need an account?</a>
+      </div>
     </header>
 
-    <main>
-      <h1>Welcome back</h1>
-      <p class="lead">Sign in to continue sending money and managing your account.</p>
-
-      <form action="#" method="post" onsubmit="event.preventDefault();alert('Demo: signed in')">
-        <div>
-          <label for="email">Email</label>
+    <main class="auth-layout">
+      <section class="auth-card">
+        <div class="form-section">
+          <div class="section-title">Email or mobile</div>
           <input id="email" type="email" name="email" placeholder="you@example.com" required />
         </div>
-        <div>
-          <label for="password">Password</label>
+
+        <div class="form-section">
+          <div class="section-title">Password</div>
           <input id="password" type="password" name="password" placeholder="Your password" required />
+          <div class="inline-hint">We’ll challenge with a code if we don’t recognize this device.</div>
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.5rem">
+
+        <div class="form-section">
+          <label class="inline-checkbox">
+            <input type="checkbox" checked />
+            <span>Trust this device for 30 days (similar to Western Union keep-me-signed-in).</span>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-primary" type="submit" onclick="event.preventDefault();alert('Demo: signed in')">Sign in</button>
           <div class="muted small"><a class="link" href="#">Forgot password?</a></div>
-          <button class="btn" type="submit">Sign in</button>
+          <div class="muted small">Don't have an account? <a class="link" href="register.html">Create account</a></div>
         </div>
-        <div style="margin-top:1rem;color:var(--color-muted)">Don't have an account? <a class="link" href="register.html">Create account</a></div>
-      </form>
+      </section>
+
+      <aside class="auth-side card">
+        <div class="card-title">Security cues</div>
+        <ul class="checklist">
+          <li>2-step SMS/email challenge when device is new or risky.</li>
+          <li>Timeout after 5 attempts, mirrors Western Union safety pattern.</li>
+          <li>Show last sign-in time/location on success (placeholder).</li>
+        </ul>
+        <div class="note-highlight">Demo only: No credentials stored or sent.</div>
+      </aside>
     </main>
   </div>
 </body>
