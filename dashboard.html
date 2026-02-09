@@ -127,7 +127,6 @@
         </div>
         <div class="rate-row" id="dash-rate-row">
           <div>Rate: <strong id="dash-rate">1 CAD ≈ 1,650 MMK</strong></div>
-          <div>Fees: <strong id="dash-fee">$4.99 CAD</strong></div>
           <div>Est. arrival: <strong id="dash-arrival">Today</strong></div>
         </div>
         <button class="btn-primary block" type="button">Review & continue</button>
@@ -184,7 +183,6 @@
   const sendChip = document.getElementById('dash-send-chip');
   const receiveChip = document.getElementById('dash-receive-chip');
   const rateLabel = document.getElementById('dash-rate');
-  const feeLabel = document.getElementById('dash-fee');
 
   countrySel?.addEventListener('change', (e) => {
     const val = e.target.value;
@@ -192,7 +190,6 @@
     sendChip.textContent = isToMM ? 'CAD' : 'MMK';
     receiveChip.textContent = isToMM ? 'MMK' : 'CAD';
     rateLabel.textContent = isToMM ? '1 CAD ≈ 1,650 MMK' : '1 MMK ≈ 0.00060 CAD';
-    feeLabel.textContent = isToMM ? '$4.99 CAD' : '$6.99 CAD';
   });
 </script>
 </html>
