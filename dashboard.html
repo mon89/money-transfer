@@ -31,7 +31,7 @@
       </div>
       <div class="header-actions">
         <a class="btn-primary" href="#new-transfer">New transfer</a>
-        <a class="btn-ghost" href="#activity">View activity</a>
+        <a class="btn-ghost" href="#activity">History</a>
       </div>
     </header>
 
@@ -92,29 +92,57 @@
         </div>
         <div class="form-columns-2">
           <label class="field">
-            <span>Recipient</span>
-            <select>
-              <option>Ko Aung (KBZ Bank)</option>
-              <option>Ma Thazin (AYA Bank)</option>
-              <option>Add new recipient…</option>
-            </select>
+            <span>Recipient name</span>
+            <input type="text" id="dash-recipient" placeholder="Full name" />
           </label>
           <label class="field">
             <span>Payout method</span>
-            <select>
-              <option>Bank account</option>
-              <option>Mobile wallet</option>
+            <select id="dash-payout">
+              <option value="bank">Bank account</option>
+              <option value="wallet">Mobile wallet</option>
             </select>
+          </label>
+        </div>
+
+        <div class="form-columns-2 conditional-group hidden" id="bank-fields">
+          <label class="field">
+            <span>Bank name</span>
+            <select id="dash-bank">
+              <option>KBZ</option>
+              <option>AYA</option>
+              <option>CB</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Bank account number</span>
+            <input type="text" id="dash-bank-account" placeholder="XXXXXXXXXX" />
+          </label>
+        </div>
+
+        <div class="form-columns-2 conditional-group hidden" id="wallet-fields">
+          <label class="field">
+            <span>Wallet</span>
+            <select id="dash-wallet">
+              <option>KPAY</option>
+              <option>AYAPAY</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Wallet phone</span>
+            <input type="tel" id="dash-wallet-phone" placeholder="09xxxxxxx" />
           </label>
         </div>
         <div class="form-columns-2">
           <label class="field">
             <span>Pay with</span>
-            <select>
-              <option>RBC • ****1234 (bank)</option>
-              <option>TD • ****7788 (bank)</option>
-              <option>Visa • ****4455 (card)</option>
-              <option>Add new funding account…</option>
+            <select id="dash-paywith">
+              <option value="ca-rbc">RBC • ****1234 (bank)</option>
+              <option value="ca-td">TD • ****7788 (bank)</option>
+              <option value="ca-visa">Visa • ****4455 (card)</option>
+              <option value="mm-kbz">KBZ • ****1234 (bank)</option>
+              <option value="mm-aya">AYA • ****81234 (bank)</option>
+              <option value="mm-cb">CB • ****91234 (bank)</option>
+              <option value="add">Add new funding account…</option>
             </select>
           </label>
           <label class="field">
@@ -197,13 +225,59 @@
   const sendChip = document.getElementById('dash-send-chip');
   const receiveChip = document.getElementById('dash-receive-chip');
   const rateLabel = document.getElementById('dash-rate');
+  const payoutSel = document.getElementById('dash-payout');
+  const bankFields = document.getElementById('bank-fields');
+  const walletFields = document.getElementById('wallet-fields');
+  const payWithSel = document.getElementById('dash-paywith');
 
-  countrySel?.addEventListener('change', (e) => {
-    const val = e.target.value;
-    const isToMM = val === 'mm';
+  const updateFields = () => {
+    const corridor = countrySel?.value;
+    const payout = payoutSel?.value;
+    const payWith = payWithSel?.value || '';
+    const isToMM = corridor === 'mm';
+    const isToCA = corridor === 'ca';
+
     sendChip.textContent = isToMM ? 'CAD' : 'MMK';
     receiveChip.textContent = isToMM ? 'MMK' : 'CAD';
     rateLabel.textContent = isToMM ? '1 CAD ≈ 1,650 MMK' : '1 MMK ≈ 0.00060 CAD';
-  });
+
+    // Show bank/wallet fields only when sending MMK -> CAD
+    if (isToCA && payout === 'bank') {
+      bankFields.classList.remove('hidden');
+      walletFields.classList.add('hidden');
+    } else if (isToCA && payout === 'wallet') {
+      walletFields.classList.remove('hidden');
+      bankFields.classList.add('hidden');
+    } else {
+      bankFields.classList.add('hidden');
+      walletFields.classList.add('hidden');
+    }
+
+    // Filter Pay with options depending on corridor
+    if (isToMM) {
+      // CAD -> MMK: show Canada funding options
+      Array.from(payWithSel.options).forEach(opt => {
+        const isCA = opt.value.startsWith('ca-') || opt.value === 'add';
+        opt.hidden = !isCA;
+      });
+      if (payWithSel.value && payWithSel.options[payWithSel.selectedIndex].hidden) {
+        payWithSel.value = 'ca-rbc';
+      }
+    } else if (isToCA) {
+      // MMK -> CAD: show Myanmar funding options
+      Array.from(payWithSel.options).forEach(opt => {
+        const isMM = opt.value.startsWith('mm-') || opt.value === 'add';
+        opt.hidden = !isMM;
+      });
+      if (payWithSel.value && payWithSel.options[payWithSel.selectedIndex].hidden) {
+        payWithSel.value = 'mm-kbz';
+      }
+    }
+  };
+
+  countrySel?.addEventListener('change', updateFields);
+  payoutSel?.addEventListener('change', updateFields);
+  payWithSel?.addEventListener('change', updateFields);
+  updateFields();
 </script>
 </html>

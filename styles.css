@@ -525,6 +525,7 @@ nav {
   border-bottom: 1px dashed rgba(17,19,26,0.1);
 }
 .table-row small { color: var(--color-muted); }
+.conditional-group.hidden { display: none; }
 
 @media (max-width: 960px) {
   .dashboard-main { grid-template-columns: 1fr; }
