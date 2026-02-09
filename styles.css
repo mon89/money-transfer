@@ -691,6 +691,8 @@ nav .dropdown div:hover { background: rgba(255,255,255,0.04); color: var(--color
   background: #f7f8fa;
 }
 
+.hidden { display: none !important; }
+
 @media (max-width: 900px) {
   .auth-layout { grid-template-columns: 1fr; }
   .auth-side { position: relative; top: 0; }
