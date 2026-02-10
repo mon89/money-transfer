@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Upload proof — SafeBridge Transfer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="auth-hero">
+    <div class="auth-hero__inner">
+      <div class="brand"><div class="brand-mark">SB</div>SafeBridge Transfer</div>
+      <div class="pill" aria-label="Security badge">Step · Upload proof</div>
+    </div>
+  </div>
+
+  <div class="shell auth-shell">
+    <header class="auth-header">
+      <div class="auth-header__left">
+        <div class="eyebrow">Proof of bank transfer</div>
+        <h1>Upload your receipt</h1>
+        <p class="lead">Share a snapshot or PDF of your bank transfer to verify funding.</p>
+      </div>
+      <div class="auth-header__right">
+        <a class="link" href="review.html">Back</a>
+      </div>
+    </header>
+
+    <main class="auth-layout">
+      <section class="auth-card">
+        <div class="form-section">
+          <div class="section-title">What to upload</div>
+          <ul class="checklist">
+            <li>Bank receipt or transfer slip (PDF, JPG, JPEG, PNG).</li>
+            <li>Shows amount, date, and reference (e.g., SB-482193).</li>
+          </ul>
+        </div>
+
+        <div class="upload-box">
+          <div class="upload-icon">⬆️</div>
+          <div class="upload-text">Drop files here or click to browse</div>
+          <input class="upload-input" type="file" accept=".pdf,image/jpeg,image/png" />
+          <div class="inline-hint">Max 10 MB per file. Demo only—files are not stored.</div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-primary block" type="button" onclick="alert('Demo: proof submitted');">Submit proof</button>
+          <div class="muted small">After review, you’ll get a confirmation email.</div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
