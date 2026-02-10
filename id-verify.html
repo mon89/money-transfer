@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ID verification — SafeBridge Transfer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="auth-hero">
+    <div class="auth-hero__inner">
+      <div class="brand"><div class="brand-mark">SB</div>SafeBridge Transfer</div>
+      <div class="pill" aria-label="Security badge">KYC verification</div>
+    </div>
+  </div>
+
+  <div class="shell auth-shell">
+    <header class="auth-header">
+      <div class="auth-header__left">
+        <div class="eyebrow">ID verification</div>
+        <h1>Verify with Persona</h1>
+        <p class="lead">We use Persona to securely verify your identity. Have your government ID ready.</p>
+      </div>
+      <div class="auth-header__right">
+        <a class="link" href="dashboard.html">Back to dashboard</a>
+      </div>
+    </header>
+
+    <main class="auth-layout">
+      <section class="auth-card" style="gap:1rem;">
+        <div class="form-section">
+          <div class="section-title">What to expect</div>
+          <ul class="checklist">
+            <li>Secure session powered by Persona.</li>
+            <li>Capture front/back of your government ID.</li>
+            <li>Selfie check to confirm liveness.</li>
+          </ul>
+        </div>
+
+        <div class="persona-box">
+          <div class="persona-iframe">
+            <div class="persona-placeholder">Persona flow placeholder</div>
+          </div>
+          <button class="btn-primary block" type="button" onclick="alert('Demo: launching Persona');">Start verification</button>
+          <div class="muted small">Demo only — no data is sent. Hook your Persona Link/SDK here.</div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
