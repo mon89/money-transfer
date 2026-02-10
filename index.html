@@ -80,69 +80,10 @@
               </div>
               <div class="pill">Demo flow</div>
             </div>
-
-            <form class="transfer-form" id="transfer-form" action="#">
-              <label class="field">
-                <span>Receiver’s country</span>
-                <div class="select">
-                  <select id="country-select">
-                    <option value="">Select country</option>
-                    <option value="mm">Myanmar (CAD → MMK)</option>
-                    <option value="ca">Canada (MMK → CAD)</option>
-                  </select>
-                  <span class="chevron">⌄</span>
-                </div>
-              </label>
-
-              <div class="amount-grid">
-                <label class="field">
-                  <span>Send amount</span>
-                  <div class="input-with-chip">
-                    <span class="chip" id="send-chip">CAD</span>
-                    <input id="send-amount" type="number" min="0" step="0.01" placeholder="0.00">
-                  </div>
-                </label>
-                <label class="field">
-                  <span>Receive amount</span>
-                  <div class="input-with-chip">
-                    <span class="chip" id="receive-chip">MMK</span>
-                    <input id="receive-amount" type="number" min="0" step="100" placeholder="0.00">
-                  </div>
-                </label>
-              </div>
-              <div class="rate-hint">Today’s demo rate: <strong>1 CAD ≈ 1,650 MMK</strong>. Final rate shown before you send.</div>
-
-              <div class="form-step">
-                <div class="step-title">How does your receiver want the money?</div>
-                <div class="option-row">
-                  <div class="option">
-                    <input type="radio" id="receive-bank" name="receive" value="bank" checked>
-                    <label for="receive-bank"><span class="option-icon">🏦</span> Bank account</label>
-                  </div>
-                  <div class="option">
-                    <input type="radio" id="receive-wallet" name="receive" value="wallet">
-                    <label for="receive-wallet"><span class="option-icon">📱</span> Mobile wallet</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-step">
-                <div class="step-title">How would you like to pay?</div>
-                <div class="option-row">
-                  <div class="option">
-                    <input type="radio" id="pay-bank" name="pay" value="bank" checked>
-                    <label for="pay-bank"><span class="option-icon">🏛️</span> Bank account</label>
-                  </div>
-                  <div class="option">
-                    <input type="radio" id="pay-wallet" name="pay" value="wallet">
-                    <label for="pay-wallet"><span class="option-icon">💳</span> Wallet / card</label>
-                  </div>
-                </div>
-              </div>
-
-              <button class="btn-primary block" type="submit" id="transfer-continue">Continue</button>
-              <div class="muted small">Need an account? <a class="link" href="register.html">Register</a> or <a class="link" href="signin.html">sign in</a>.</div>
-            </form>
+            <div class="muted">
+              Transfer form is available after you sign in.<br>
+              <a class="btn-primary" href="signin.html" style="margin-top:0.75rem; display:inline-flex;">Sign in to start</a>
+            </div>
           </div>
         </section>
 
