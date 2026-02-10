@@ -526,6 +526,23 @@ nav {
 }
 .table-row small { color: var(--color-muted); }
 .conditional-group.hidden { display: none; }
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.6rem;
+}
+.summary-value { font-weight: 700; color: #0f172a; }
+.bank-box {
+  border: 1px solid rgba(17,19,26,0.1);
+  border-radius: 10px;
+  padding: 0.8rem 0.9rem;
+  background: #f7f8fa;
+  display: grid;
+  gap: 0.35rem;
+}
+.bank-row { display: flex; justify-content: space-between; gap: 0.5rem; }
+.bank-row .label { color: var(--color-muted); font-weight: 600; }
+.bank-row .value { font-weight: 700; }
 
 @media (max-width: 960px) {
   .dashboard-main { grid-template-columns: 1fr; }
