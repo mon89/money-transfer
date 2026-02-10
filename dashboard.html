@@ -107,11 +107,7 @@
         <div class="form-columns-2 conditional-group hidden" id="bank-fields">
           <label class="field">
             <span>Bank name</span>
-            <select id="dash-bank">
-              <option>KBZ</option>
-              <option>AYA</option>
-              <option>CB</option>
-            </select>
+            <select id="dash-bank"></select>
           </label>
           <label class="field">
             <span>Bank account number</span>
@@ -218,6 +214,23 @@
   const bankFields = document.getElementById('bank-fields');
   const walletFields = document.getElementById('wallet-fields');
   const payWithSel = document.getElementById('dash-paywith');
+  const bankSelect = document.getElementById('dash-bank');
+
+  const setBankOptions = (isToMM) => {
+    const opts = isToMM
+      ? [
+          ['rbc', 'RBC'],
+          ['td', 'TD'],
+          ['bmo', 'BMO'],
+          ['scotia', 'Scotiabank'],
+        ]
+      : [
+          ['kbz', 'KBZ'],
+          ['aya', 'AYA'],
+          ['cb', 'CB'],
+        ];
+    bankSelect.innerHTML = opts.map(([v, l]) => `<option value="${v}">${l}</option>`).join('');
+  };
 
   const updateFields = () => {
     const corridor = countrySel?.value;
@@ -231,9 +244,10 @@
     rateLabel.textContent = isToMM ? '1 CAD ≈ 1,650 MMK' : '1 MMK ≈ 0.00060 CAD';
 
     // Show bank/wallet fields only when sending MMK -> CAD
-    if (isToCA && payout === 'bank') {
+    if ((isToCA || isToMM) && payout === 'bank') {
       bankFields.classList.remove('hidden');
       walletFields.classList.add('hidden');
+      setBankOptions(isToMM);
     } else if (isToCA && payout === 'wallet') {
       walletFields.classList.remove('hidden');
       bankFields.classList.add('hidden');
