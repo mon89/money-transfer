@@ -92,14 +92,34 @@
         </div>
         <div class="form-columns-2">
           <label class="field">
-            <span>Recipient name</span>
-            <input type="text" id="dash-recipient" placeholder="Full name" />
+            <span>Select recipient</span>
+            <select id="dash-recipient-select">
+              <option value="new">Add new recipient</option>
+              <option value="ko-aung">Ko Aung • KBZ • ****2211</option>
+              <option value="ma-thazin">Ma Thazin • AYA • ****9898</option>
+            </select>
           </label>
           <label class="field">
             <span>Payout method</span>
             <select id="dash-payout">
               <option value="bank">Bank account</option>
               <option value="wallet">Mobile wallet</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-columns-2 conditional-group" id="recipient-fields">
+          <label class="field">
+            <span>Recipient name</span>
+            <input type="text" id="dash-recipient" placeholder="Full name" />
+          </label>
+          <label class="field">
+            <span>Relationship to receiver</span>
+            <select id="dash-relationship">
+              <option>Family</option>
+              <option>Friend</option>
+              <option>Business</option>
+              <option>Self</option>
             </select>
           </label>
         </div>
@@ -147,6 +167,16 @@
               <option>Family support</option>
               <option>Education</option>
               <option>Medical</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Source of funds</span>
+            <select id="dash-funds">
+              <option>Salary</option>
+              <option>Savings</option>
+              <option>Business income</option>
+              <option>Loan</option>
               <option>Other</option>
             </select>
           </label>
@@ -201,6 +231,57 @@
           </li>
         </ul>
       </div>
+
+      <div class="card activity-card" id="recipients">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Recipients</div>
+            <div class="card-subtitle">Manage saved recipients and payout details.</div>
+          </div>
+          <a class="link" href="#new-transfer">Use in transfer</a>
+        </div>
+        <ul class="activity-list">
+          <li>
+            <div>
+              <div class="activity-title">Ko Aung</div>
+              <div class="activity-meta">KBZ • ****2211 • Bank</div>
+            </div>
+            <span class="pill muted">Saved</span>
+          </li>
+          <li>
+            <div>
+              <div class="activity-title">Ma Thazin</div>
+              <div class="activity-meta">AYAPAY • 09xxxxxxx • Wallet</div>
+            </div>
+            <span class="pill muted">Saved</span>
+          </li>
+        </ul>
+        <div class="card-subtitle" style="margin-top:0.75rem;">Add new recipient</div>
+        <div class="form-columns-2">
+          <label class="field">
+            <span>Name</span>
+            <input type="text" placeholder="Full name" />
+          </label>
+          <label class="field">
+            <span>Payout method</span>
+            <select>
+              <option>Bank</option>
+              <option>Wallet</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-columns-2">
+          <label class="field">
+            <span>Bank / Wallet</span>
+            <input type="text" placeholder="KBZ / KPAY" />
+          </label>
+          <label class="field">
+            <span>Account / Phone</span>
+            <input type="text" placeholder="Account number or wallet phone" />
+          </label>
+        </div>
+        <button class="btn-primary block" type="button">Save recipient</button>
+      </div>
     </section>
   </div>
 </body>
@@ -215,6 +296,8 @@
   const walletFields = document.getElementById('wallet-fields');
   const payWithSel = document.getElementById('dash-paywith');
   const bankSelect = document.getElementById('dash-bank');
+  const recipientSel = document.getElementById('dash-recipient-select');
+  const recipientFields = document.getElementById('recipient-fields');
 
   const setBankOptions = (isToMM) => {
     const opts = isToMM
@@ -276,11 +359,21 @@
         payWithSel.value = 'mm-kbz';
       }
     }
+
+    // Recipient fields hidden when selecting existing
+    if (recipientSel && recipientFields) {
+      if (recipientSel.value === 'new') {
+        recipientFields.classList.remove('hidden');
+      } else {
+        recipientFields.classList.add('hidden');
+      }
+    }
   };
 
   countrySel?.addEventListener('change', updateFields);
   payoutSel?.addEventListener('change', updateFields);
   payWithSel?.addEventListener('change', updateFields);
+  recipientSel?.addEventListener('change', updateFields);
   updateFields();
 </script>
 </html>
