@@ -568,6 +568,38 @@ nav {
   display: grid;
   gap: 0.4rem;
 }
+.status-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+.status-step {
+  border: 1px solid rgba(17,19,26,0.08);
+  border-radius: 10px;
+  padding: 0.75rem;
+  background: #f9fafb;
+  display: grid;
+  gap: 0.15rem;
+  align-content: start;
+}
+.status-step.active {
+  border-color: var(--color-primary);
+  background: #eef2ff;
+  box-shadow: 0 8px 18px rgba(31,70,176,0.12);
+}
+.status-icon { font-size: 1.2rem; }
+.status-title { font-weight: 700; }
+.status-desc { color: var(--color-muted); font-size: 0.9rem; }
+.tracking-box {
+  border: 1px dashed rgba(17,19,26,0.2);
+  border-radius: 10px;
+  padding: 0.8rem 0.9rem;
+  display: grid;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+.tracking-value { font-family: "Courier New", monospace; font-weight: 800; letter-spacing: 0.03em; }
 
 @media (max-width: 960px) {
   .dashboard-main { grid-template-columns: 1fr; }

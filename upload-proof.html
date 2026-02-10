@@ -44,11 +44,16 @@
         </div>
 
         <div class="form-actions">
-          <a class="btn-primary block" href="confirmation.html">Submit proof</a>
+          <button class="btn-primary block" type="button" id="submit-proof">Submit proof</button>
           <div class="muted small">After review, you’ll get a confirmation email.</div>
         </div>
       </section>
     </main>
   </div>
 </body>
+<script>
+  document.getElementById('submit-proof')?.addEventListener('click', () => {
+    window.location.href = './confirmation.html';
+  });
+</script>
 </html>
